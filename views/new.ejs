@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New Post</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: white;
+            padding: 20px;
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        /* Form Styles */
+        .form-group {
+            text-align: left;
+            margin-bottom: 15px;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border 0.3s ease-in-out;
+        }
+
+        input:focus, textarea:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        textarea {
+            resize: none;
+            height: 100px;
+        }
+
+        /* Button Styles */
+        .btn {
+            width: 100%;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s ease-in-out;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Back Link */
+        .back-link {
+            display: inline-block;
+            margin-top: 15px;
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .back-link:hover {
+            color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Create a New Post</h2>
+        <form method="post" action="/posts">
+            
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" placeholder="Enter your username" required />
+            </div>
+
+            <div class="form-group">
+                <label for="content">Your Post:</label>
+                <textarea id="content" name="content" placeholder="Write something amazing..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn">Post</button>
+        </form>
+
+        <a href="/posts" class="back-link">← Back to Posts</a>
+    </div>
+
+</body>
+</html>

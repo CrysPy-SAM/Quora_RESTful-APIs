@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Posts</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 100%;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        /* Post Styles */
+        .post {
+            background: #ffffff;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .post:hover {
+            transform: scale(1.02);
+        }
+
+        .user {
+            font-size: 16px;
+            font-weight: bold;
+            color: #007bff;
+            margin-bottom: 5px;
+        }
+
+        .content {
+            font-size: 14px;
+            color: #444;
+        }
+
+        /* Button Styles */
+        .btn {
+            display: inline-block;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background 0.3s ease-in-out;
+            margin-top: 15px;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Quora Posts</h1>
+
+        <% if (posts && posts.length > 0) { %>
+            <% for (let post of posts) { %>
+                <div class="post">
+                    <h3 class="user">@<%= post.username %></h3>
+                    <p class="content"><%= post.content %></p>
+                </div>
+            <% } %>
+        <% } else { %>
+            <p>No posts available. Be the first to write something!</p>
+        <% } %>
+
+        <a href="/posts/new" class="btn">Create New Post</a>
+    </div>
+
+</body>
+</html>
